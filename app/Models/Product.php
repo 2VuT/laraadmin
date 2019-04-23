@@ -22,4 +22,13 @@ class Product extends Model
 	protected $guarded = [];
 
 	protected $dates = ['deleted_at'];
+
+	public function product_type(){
+    	return $this->belongsTo('App\Models\Categoty','id_type','id');
+    }
+
+    public function bill_detail(){
+    	return $this->hasMany('App\Models\BillDetail','id_product','id');
+    }
+
 }

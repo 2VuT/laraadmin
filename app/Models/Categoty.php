@@ -22,4 +22,8 @@ class Categoty extends Model
 	protected $guarded = [];
 
 	protected $dates = ['deleted_at'];
+
+	public function product(){
+    	return $this->hasMany('App\Models\Product','id_type','id');
+    }
 }
