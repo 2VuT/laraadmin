@@ -70,4 +70,32 @@ Route::group(['as' => $as, 'middleware' => ['auth', 'permission:ADMIN_PANEL']], 
 	Route::get(config('laraadmin.adminRoute') . '/backup_dt_ajax', 'LA\BackupsController@dtajax');
 	Route::post(config('laraadmin.adminRoute') . '/create_backup_ajax', 'LA\BackupsController@create_backup_ajax');
 	Route::get(config('laraadmin.adminRoute') . '/downloadBackup/{id}', 'LA\BackupsController@downloadBackup');
+
+	/* ================== Categoties ================== */
+	Route::resource(config('laraadmin.adminRoute') . '/categoties', 'LA\CategotiesController');
+	Route::get(config('laraadmin.adminRoute') . '/categoty_dt_ajax', 'LA\CategotiesController@dtajax');
+
+	/* ================== Products ================== */
+	Route::resource(config('laraadmin.adminRoute') . '/products', 'LA\ProductsController');
+	Route::get(config('laraadmin.adminRoute') . '/product_dt_ajax', 'LA\ProductsController@dtajax');
+
+	/* ================== Slides ================== */
+	Route::resource(config('laraadmin.adminRoute') . '/slides', 'LA\SlidesController');
+	Route::get(config('laraadmin.adminRoute') . '/slide_dt_ajax', 'LA\SlidesController@dtajax');
+
+	/* ================== News ================== */
+	Route::resource(config('laraadmin.adminRoute') . '/news', 'LA\NewsController');
+	Route::get(config('laraadmin.adminRoute') . '/news_dt_ajax', 'LA\NewsController@dtajax');
+
+	/* ================== Customers ================== */
+	Route::resource(config('laraadmin.adminRoute') . '/customers', 'LA\CustomersController');
+	Route::get(config('laraadmin.adminRoute') . '/customer_dt_ajax', 'LA\CustomersController@dtajax');
+
+	/* ================== Bills ================== */
+	Route::resource(config('laraadmin.adminRoute') . '/bills', 'LA\BillsController');
+	Route::get(config('laraadmin.adminRoute') . '/bill_dt_ajax', 'LA\BillsController@dtajax');
+
+	/* ================== BillDetails ================== */
+	Route::resource(config('laraadmin.adminRoute') . '/billdetails', 'LA\BillDetailsController');
+	Route::get(config('laraadmin.adminRoute') . '/billdetail_dt_ajax', 'LA\BillDetailsController@dtajax');
 });
