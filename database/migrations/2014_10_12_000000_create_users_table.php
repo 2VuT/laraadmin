@@ -22,9 +22,9 @@ class CreateUsersTable extends Migration
             ["context_id", "Context", "Integer", false, "0", 0, 0, false],
             ["email", "Email", "Email", true, "", 0, 250, false],
             ["password", "Password", "Password", false, "", 6, 250, true],
-            ["type", "User Type", "Dropdown", false, "Employee", 0, 0, false, ["Employee","Client"]],
-            ["phone", "Phone", "Mobile", false, "", 0, 20, false],
-            ["address", "Address", "Address", false, "", 0, 256, false],
+            ["phone", "Phone", "Mobile", false, "0396267357", 0, 20, false],
+            ["address", "Address", "Dropdown", false, "Ha noi", 0, 256, false, ["Ha Noi","TP.HCM","Da Nang","Thai Binh","Hai Phong","Nam Dinh","My Tho","Khanh Hoa","Phu Quoc","Cao Bang"]],
+            ["type", "User Type", "Dropdown", false, "Customer", 0, 0, false, ["Employee","Client","Customer"]],
         ]);
 		
 		/*

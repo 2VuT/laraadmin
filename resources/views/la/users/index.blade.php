@@ -63,9 +63,9 @@
 					@la_input($module, 'context_id')
 					@la_input($module, 'email')
 					@la_input($module, 'password')
-					@la_input($module, 'type')
 					@la_input($module, 'phone')
 					@la_input($module, 'address')
+					@la_input($module, 'type')
 					--}}
 				</div>
 			</div>

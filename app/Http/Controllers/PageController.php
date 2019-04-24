@@ -16,6 +16,8 @@ use App\Models\News;
 use App\Models\Product;
 use App\Models\Slide;
 use Session;
+use Validator;
+use Hash;
 
 class PageController extends Controller
 {
@@ -104,6 +106,73 @@ class PageController extends Controller
         Session::forget('cart');
         return redirect()->back()->with('thongbao', 'Đặt hàng thành công');
 
+    }
+
+    public function getLogin(){
+        return view('page.dangnhap');
+    }
+
+    public function getSignin(){
+        return view('page.dangki');
+    }
+
+    public function postSignin(Request $req){
+        $this->validate($req, [
+            'email' => 'required|email',
+            'password' => 'required|min:5|max:20',
+            'fullname' => 'required',
+            //'re-password' => 'required|same:password'
+        ],[
+            'email.required' => 'khong duoc de trong',
+            'email.email' => 'khong dung dinh dang',
+            'password.required' => 'khong duoc de trong',
+            'password.min' => 'mat khau tu 5 den 20 ky tu',
+            'password.max' => 'mat khau tu 5 den 20 ky tu',
+            'fullname.required' => 'khong duoc de trong',
+            //'re_password.required' => 'khong duoc de trong',
+            //'re_password.same' => 'mat khau nhap lai khong dung'
+        ]);
+
+        $user = new User();
+        $user->name = $req->fullname;
+        $user->email = $req->email;
+        $user->password = Hash::make($req->password);
+        $user->address = $req->address;
+        $user->phone = $req->phone;
+        $user->save();
+        return redirect()->back()->with(['thanh cong', 'dang ky thanh cong']);
+
+    }
+
+    public function postLogin(Request $req){
+        $this->validate($req,
+            [
+                'email'=>'required|email',
+                'password'=>'required|min:5|max:20'
+            ],
+            [
+                'email.required'=>'Vui lòng nhập email',
+                'email.email'=>'Email không đúng định dạng',
+                'password.required'=>'Vui lòng nhập mật khẩu',
+                'password.min'=>'Mật khẩu ít nhất 6 kí tự',
+                'password.max'=>'Mật khẩu không quá 20 kí tự'
+            ]
+        );
+        $credentials = array('email'=>$req->email,'password'=>$req->password);
+        $user = User::where('email', '=', $req->email)->first();
+
+        if($user){
+            if(Auth::attempt($credentials)){
+                return redirect()->route('trang-chu');
+            //return redirect()->back()->with(['flag'=>'success','message'=>'Đăng nhập thành công']);
+            }
+            else{
+                return redirect()->back()->with(['flag'=>'danger','message'=>'Đăng nhập không thành công']);
+            }
+        }
+        else{
+           return redirect()->back()->with(['flag'=>'danger','message'=>'Tài khoản chưa kích hoạt']); 
+        }
     }
 
     public function postLogout(){

@@ -111,9 +111,9 @@
 						@la_display($module, 'context_id')
 						@la_display($module, 'email')
 						@la_display($module, 'password')
-						@la_display($module, 'type')
 						@la_display($module, 'phone')
 						@la_display($module, 'address')
+						@la_display($module, 'type')
 					</div>
 				</div>
 			</div>
