@@ -11,9 +11,55 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('index', [
+	'as' => 'trang-chu',
+	'uses' => 'PageController@getIndex'
+]);
+
+Route::get('loai-san-pham/{type}', [
+	'as' => 'loaisanpham',
+	'uses' => 'PageController@getLoaiSp'
+]);
+
+Route::get('chi-tiet-san-pham/{id}' ,[
+	'as' => 'chitietsanpham',
+	'uses' => 'PageController@getChitiet'
+]);
+
+Route::get('them-gio-hang/{id}', [
+	'as' =>'themgiohang',
+	'uses' => 'PageController@getAddtoCart'
+]);
+
+Route::get('del-cart/{id}', [
+	'as' => 'xoagiohang',
+	'uses' => 'PageController@getDelItemCart'
+]);
+
+Route::get('gioi-thieu', [
+	'as' => 'gioithieu',
+	'uses' => 'PageController@getGioiThieu'
+]);
+
+Route::get('dat-hang' ,[
+	'as' =>'dathang',
+	'uses' => 'PageController@getCheckout'
+]);
+
+Route::get('dat-hang', [
+	'as' => 'dathang',
+	'uses' => 'PageController@postCheckout'
+]);
+
+Route::get('lien-he', [
+	'as' => 'lienhe',
+	'uses' => 'PageController@getLienHe'
+]);
+
+Route::get('dang-xuat', [
+	'as' => 'logout',
+	'uses' => 'PageController@postLogout'
+]);
 
 /* ================== Homepage + Admin Routes ================== */
 
