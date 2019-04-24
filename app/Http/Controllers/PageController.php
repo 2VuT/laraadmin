@@ -21,14 +21,14 @@ class PageController extends Controller
 {
     public function getIndex(){
     	$slide = Slide::all();
-    	$new_product = Product::where('status', 1)->paginate(4);
+    	$new_product = Product::where('status', 1)->paginate(8);
     	$sanpham_khuyenmai = Product::where('promotion_price', '<>', 0)->paginate(8);
     	return view('page.trangchu', compact('slide', 'new_product', 'sanpham_khuyenmai'));
     }
 
     public function getLoaiSp($type){
     	$sp_theoloai = Product::where('id_type', $type)->get();
-    	$sp_khac = Product::where('id_type', '<>', $type)->paginate(4);
+    	$sp_khac = Product::where('id_type', '<>', $type)->paginate(3);
     	$loai = Categoty::all();
     	$loap_sp = Categoty::where('id', $type)->get();
     	return view('page.loai_sanpham', compact('sp_theoloai', 'sp_khac', 'loai', 'loap_sp'));
@@ -36,7 +36,7 @@ class PageController extends Controller
 
     public function getChitiet(Request $req){
     	$sanpham = Product::where('id', $req->id)->first();
-    	$sp_tuongtu = Product::where('id_type', $req->id_type)->paginate(4);
+    	$sp_tuongtu = Product::where('id_type', $req->id_type)->paginate(3);
     	return view('page.chitiet_sanpham', compact('sanpham', 'sp_tuongtu'));
     }
 
