@@ -59,7 +59,7 @@
                     @la_form($module)
 					
 					{{--
-					@la_input($module, 'link')
+					@la_input($module, 'load_file')
 					@la_input($module, 'image')
 					--}}
 				</div>

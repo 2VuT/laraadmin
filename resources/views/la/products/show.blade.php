@@ -112,6 +112,7 @@
 						@la_display($module, 'description')
 						@la_display($module, 'unit_price')
 						@la_display($module, 'promotion_price')
+						@la_display($module, 'load_image')
 						@la_display($module, 'image')
 						@la_display($module, 'status')
 					</div>

@@ -64,6 +64,7 @@
 					@la_input($module, 'description')
 					@la_input($module, 'unit_price')
 					@la_input($module, 'promotion_price')
+					@la_input($module, 'load_image')
 					@la_input($module, 'image')
 					@la_input($module, 'status')
 					--}}

@@ -23,7 +23,8 @@ class CreateProductsTable extends Migration
             ["description", "Description", "Textarea", false, "", 0, 0, false],
             ["unit_price", "Unit Price", "Currency", false, "690000", 0, 11, false],
             ["promotion_price", "Promotion Price", "Currency", false, "600000", 0, 11, false],
-            ["image", "Image", "Image", false, "", 0, 0, false],
+            ["load_image", "Load Image", "Image", false, "", 0, 0, false],
+            ["image", "Image", "String", false, "", 0, 256, false],
             ["status", "Status", "Integer", false, "1", 0, 2, false],
         ]);
 		

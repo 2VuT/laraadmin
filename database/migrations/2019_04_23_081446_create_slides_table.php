@@ -18,8 +18,8 @@ class CreateSlidesTable extends Migration
     public function up()
     {
         Module::generate("Slides", 'slides', 'image', 'fa-cube', [
-            ["link", "Link", "URL", false, "", 0, 256, false],
-            ["image", "Image", "Image", false, "", 0, 0, false],
+            ["load_file", "Load File", "Image", false, "", 0, 256, false],
+            ["image", "Image", "String", false, "", 0, 256, false],
         ]);
 		
 		/*

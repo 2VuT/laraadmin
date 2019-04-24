@@ -107,7 +107,7 @@
 						<h4>General Info</h4>
 					</div>
 					<div class="panel-body">
-						@la_display($module, 'link')
+						@la_display($module, 'load_file')
 						@la_display($module, 'image')
 					</div>
 				</div>
