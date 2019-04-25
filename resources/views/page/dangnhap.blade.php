@@ -39,6 +39,7 @@
 						</div>
 						<div class="form-block">
 							<button type="submit" class="btn btn-primary">Login</button>
+							<a href="redirect">FB Login</a>
 						</div>
 					</div>
 					<div class="col-sm-3"></div>

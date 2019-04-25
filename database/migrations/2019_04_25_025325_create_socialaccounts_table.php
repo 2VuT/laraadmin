@@ -8,7 +8,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 use Dwij\Laraadmin\Models\Module;
 
-class CreateUsersTable extends Migration
+class CreateSocialaccountsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -17,14 +17,10 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Module::generate("Users", 'users', 'name', 'fa-group', [
-            ["name", "Name", "Name", false, "", 5, 250, true],
-            ["context_id", "Context", "Integer", false, "0", 0, 0, false],
-            ["email", "Email", "Email", false, "", 0, 250, false],
-            ["password", "Password", "Password", false, "", 6, 250, true],
-            ["phone", "Phone", "Mobile", false, "0396267357", 0, 20, false],
-            ["address", "Address", "Dropdown", false, "Ha noi", 0, 256, false, ["Ha Noi","TP.HCM","Da Nang","Thai Binh","Hai Phong","Nam Dinh","My Tho","Khanh Hoa","Phu Quoc","Cao Bang"]],
-            ["type", "User Type", "Dropdown", false, "Customer", 0, 0, false, ["Employee","Client","Customer"]],
+        Module::generate("Socialaccounts", 'socialaccounts', 'provider_user_id', 'fa-cube', [
+            ["provider_user_id", "Provider User Id", "String", false, "", 0, 256, false],
+            ["provider", "Provider", "String", false, "", 0, 256, false],
+            ["user_id", "User Id", "Integer", false, "", 0, 11, false],
         ]);
 		
 		/*
@@ -70,8 +66,8 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        if (Schema::hasTable('users')) {
-            Schema::drop('users');
+        if (Schema::hasTable('socialaccounts')) {
+            Schema::drop('socialaccounts');
         }
     }
 }

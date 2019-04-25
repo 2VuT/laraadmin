@@ -81,6 +81,10 @@ Route::get('dang-xuat', [
 	'uses' => 'PageController@postLogout'
 ]);
 
+Route::get('/redirect', 'SocialAuthController@redirect');
+
+Route::get('/callback', 'SocialAuthController@callback');
+
 /* ================== Homepage + Admin Routes ================== */
 
 require __DIR__.'/admin_routes.php';
