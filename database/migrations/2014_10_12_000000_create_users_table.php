@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
         Module::generate("Users", 'users', 'name', 'fa-group', [
             ["name", "Name", "Name", false, "", 5, 250, true],
             ["context_id", "Context", "Integer", false, "0", 0, 0, false],
-            ["email", "Email", "Email", false, "", 0, 250, false],
+            ["email", "Email", "Email", true, "", 0, 250, true],
             ["password", "Password", "Password", false, "", 6, 250, true],
             ["phone", "Phone", "Mobile", false, "0396267357", 0, 20, false],
             ["address", "Address", "Dropdown", false, "Ha noi", 0, 256, false, ["Ha Noi","TP.HCM","Da Nang","Thai Binh","Hai Phong","Nam Dinh","My Tho","Khanh Hoa","Phu Quoc","Cao Bang"]],
