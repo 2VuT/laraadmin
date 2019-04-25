@@ -6,7 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\SocialAccountService;
 use Socialite;
+use Auth;
 
 class SocialAuthController extends Controller
 {
@@ -15,14 +17,14 @@ class SocialAuthController extends Controller
         return Socialite::driver('facebook')->redirect();   
     }   
 
-    public function callback()
+    public function callback(SocialAccountService $service)
     {
-        $user = Socialite::driver('facebook')->user();
+        $user = $service->createOrGetUser(Socialite::driver('facebook')->user());
 
-        dd($user);
-        // auth()->login($user);
-
-        // return redirect()->route('login');	
+        //echo $user;
+        //auth()->login($user);
+        Auth::loginUsingId($user->id);
+        return redirect()->route('trang-chu');	
    
     }
 }
