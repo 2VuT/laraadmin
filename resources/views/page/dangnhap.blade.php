@@ -37,10 +37,25 @@
 							<label for="phone">Password*</label>
 							<input type="password" name="password" required>
 						</div>
-						<div class="form-block">
-							<button type="submit" class="btn btn-primary">Login</button>
-							<a href="redirect">FB Login</a>
+						<div>
+							<div id="btt" class="form-block">
+								<button type="submit" class="btn btn-primary">Login</button>
+							</div>
+							<div id="btt1">
+								<div>
+									<p id="pt">Hoặc bạn có thể đăng nhập bằng</p>
+								</div>
+								<div>
+									<a id="fb" href="redirect"><img src="source/image/facebook.jpg" alt="" width="200px" height="40px"></a>
+								</div>
+								<div>
+									<a id="gg" href="redirect"><img src="source/image/google.png" alt="" width="200px" height="40px"></a>
+								</div>
+							</div>
+							
+
 						</div>
+						
 					</div>
 					<div class="col-sm-3"></div>
 				</div>

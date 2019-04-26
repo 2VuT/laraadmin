@@ -814,6 +814,22 @@ padding:12px
 margin-bottom:10px
 }
 
+#btt{
+	float: left;
+}
+
+#btt1{
+	float: right;
+}
+
+#pt{
+	padding-bottom: 20px;
+}
+
+#gg{
+	padding-top: 50px;
+}
+
 input[type="checkbox"] {
 display:none
 }
