@@ -85,6 +85,11 @@ Route::get('/redirect', 'SocialAuthController@redirect');
 
 Route::get('/callback', 'SocialAuthController@callback');
 
+Route::get('paypal', 'PaypalController@index');
+
+Route::get('status', 'PaypalController@status');
+
+
 /* ================== Homepage + Admin Routes ================== */
 
 require __DIR__.'/admin_routes.php';

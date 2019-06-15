@@ -82,7 +82,7 @@
 							</div>
 							<div class="your-order-item">
 								<div class="pull-left"><p class="your-order-f18">Tổng tiền:</p></div>
-								<div class="pull-right"><h5 class="color-black">@if(Session::has('cart')){{number_format($totalPrice)}}@else 0 @endif đồng</h5></div>
+								<div id="money" class="pull-right"><h5 class="color-black">@if(Session::has('cart')){{number_format($totalPrice)}}@else 0 @endif đồng</h5></div>
 								<div class="clearfix"></div>
 							</div>
 						</div>
@@ -94,20 +94,19 @@
 									<input id="payment_method_bacs" type="radio" class="input-radio" name="payment_method" value="COD" checked="checked" data-order_button_text="">
 									<label for="payment_method_bacs">Thanh toán khi nhận hàng </label>
 									<div class="payment_box payment_method_bacs" style="display: block;">
-										Cửa hàng sẽ gửi hàng đến địa chỉ của bạn, bạn xem hàng rồi thanh toán tiền cho nhân viên giao hàng
+										Bạn vui lòng kiểm tra mặt hàng trước khi thanh toán để đảm bảo cho việc đổi trả hàng
 									</div>						
 								</li>
 
 								<li class="payment_method_cheque">
 									<input id="payment_method_cheque" type="radio" class="input-radio" name="payment_method" value="ATM" data-order_button_text="">
-									<label for="payment_method_cheque">Chuyển khoản </label>
+									<label for="payment_method_cheque">Thanh toán online </label>
 									<div class="payment_box payment_method_cheque" style="display: none;">
-										Chuyển tiền đến tài khoản sau:
-										<br>- Số tài khoản: 123 456 789
-										<br>- Chủ TK: Nguyễn A
-										<br>- Ngân hàng ACB, Chi nhánh TPHCM
+										<a href="paypal"><img src="source\image\Paypal.png" ></a>
 									</div>						
 								</li>
+
+
 								
 							</ul>
 						</div>
