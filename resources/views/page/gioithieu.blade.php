@@ -16,7 +16,7 @@
 	<div class="container">
 		<div id="content">
 			<div class="our-history">
-				<h2 class="text-center wow fadeInDown">Lịch sử phát triển</h2>
+				<h2 class="text-center wow fadeInDown">Our History</h2>
 				<div class="space35">&nbsp;</div>
 
 				<div class="history-slider">
