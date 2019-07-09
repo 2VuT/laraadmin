@@ -1,8 +1,6 @@
 <?php
 
 /* ================== Homepage ================== */
-Route::get('/', 'HomeController@index');
-Route::get('/home', 'HomeController@index');
 Route::auth();
 
 /* ================== Access Uploaded Files ================== */
@@ -23,8 +21,14 @@ if(\Dwij\Laraadmin\Helpers\LAHelper::laravel_ver() == 5.3) {
 }
 
 Route::group(['as' => $as, 'middleware' => ['auth', 'permission:ADMIN_PANEL']], function () {
-	
-	/* ================== Dashboard ================== */
+
+//    index
+
+    Route::get('/', 'HomeController@index');
+    Route::get('/home', 'HomeController@index');
+
+
+    /* ================== Dashboard ================== */
 	
 	Route::get(config('laraadmin.adminRoute'), 'LA\DashboardController@index');
 	Route::get(config('laraadmin.adminRoute'). '/dashboard', 'LA\DashboardController@index');
