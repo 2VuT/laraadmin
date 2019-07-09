@@ -22,37 +22,71 @@
 			<div class="row">@if(Session::has('thongbao')){{Session::get('thongbao')}}@endif</div>
 			<div class="row">
 				<div class="col-sm-6">
-					<h4>Nhập thông tin</h4>
+					<h4>Thông tin</h4>
 					<div class="space20">&nbsp;</div>
 
-					<div class="form-block">
-						<label for="name">Họ tên*</label>
-						<input type="text" name="name" placeholder="Họ tên" required>
-					</div>
-					<div class="form-block">
-						<label>Giới tính </label>
-						<input id="gender" type="radio" class="input-radio" name="gender" value="nam" checked="checked" style="width: 10%"><span style="margin-right: 10%">Nam</span>
-						<input id="gender" type="radio" class="input-radio" name="gender" value="nữ" style="width: 10%"><span>Nữ</span>
-									
-					</div>
+					@if(Auth::check())
 
-					<div class="form-block">
-						<label for="email">Email*</label>
-						<input type="email" id="email" name="email" required placeholder="expample@gmail.com">
-					</div>
+						<div class="form-block">
+							<label for="name">Họ tên*</label>
+							<input type="text" name="name" value="{{ Auth::user()->name }}" required>
+						</div>
+						<div class="form-block">
+							<label>Giới tính </label>
+							<input id="gender" type="radio" class="input-radio" name="gender" value="nam" checked="checked" style="width: 10%"><span style="margin-right: 10%">Nam</span>
+							<input id="gender" type="radio" class="input-radio" name="gender" value="nữ" style="width: 10%"><span>Nữ</span>
 
-					<div class="form-block">
-						<label for="adress">Địa chỉ*</label>
-						<input type="text" id="address" name="address" placeholder="Street Address" required>
-					</div>
-					
+						</div>
 
-					<div class="form-block">
-						<label for="phone">Điện thoại*</label>
-						<input type="text" id="phone" name="phone" required>
-					</div>
-					
-					<div class="form-block">
+						<div class="form-block">
+							<label for="email">Email*</label>
+							<input type="email" id="email" name="email" value="{{ Auth::user()->email }}" required>
+						</div>
+
+						<div class="form-block">
+							<label for="adress">Địa chỉ*</label>
+							<input type="text" id="address" name="address" value="{{ Auth::user()->address }}" required>
+						</div>
+
+
+						<div class="form-block">
+							<label for="phone">Điện thoại*</label>
+							<input type="text" id="phone" required value="{{ Auth::user()->phone }}">
+						</div>
+
+
+					@else
+
+						<div class="form-block">
+							<label for="name">Họ tên*</label>
+							<input type="text" name="name" placeholder="Họ tên" required>
+						</div>
+						<div class="form-block">
+							<label>Giới tính </label>
+							<input id="gender" type="radio" class="input-radio" name="gender" value="nam" checked="checked" style="width: 10%"><span style="margin-right: 10%">Nam</span>
+							<input id="gender" type="radio" class="input-radio" name="gender" value="nữ" style="width: 10%"><span>Nữ</span>
+
+						</div>
+
+						<div class="form-block">
+							<label for="email">Email*</label>
+							<input type="email" id="email" name="email" required placeholder="expample@gmail.com">
+						</div>
+
+						<div class="form-block">
+							<label for="adress">Địa chỉ*</label>
+							<input type="text" id="address" name="address" placeholder="Street Address" required>
+						</div>
+
+
+						<div class="form-block">
+							<label for="phone">Điện thoại*</label>
+							<input type="text" id="phone" name="phone" required>
+						</div>
+
+					@endif
+
+						<div class="form-block">
 						<label for="notes">Ghi chú</label>
 						<textarea id="notes" name="notes"></textarea>
 					</div>
