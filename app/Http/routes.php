@@ -11,7 +11,7 @@
 |
 */
 
-<<<<<<< HEAD
+
 Route::group(['domain' => env('DOMAIN_FRONTEND' ,'newbie.us')], function (){
     Route::get('/', [
         'as' => 'trang-chu',
@@ -96,7 +96,7 @@ Route::group(['domain' => env('DOMAIN_FRONTEND' ,'newbie.us')], function (){
     Route::get('status', 'PaypalController@status');
 });
 
-=======
+
 Route::get('index', [
 	'as' => 'trang-chu',
 	'uses' => 'PageController@getIndex'
@@ -170,7 +170,6 @@ Route::get('dang-xuat', [
 Route::get('/redirect', 'SocialAuthController@redirect');
 
 Route::get('/callback', 'SocialAuthController@callback');
->>>>>>> parent of db5511b... finish
 
 /* ================== Homepage + Admin Routes ================== */
 
