@@ -32,7 +32,7 @@ class PageController extends Controller
     	$sp_theoloai = Product::where('id_type', $type)->get();
     	$sp_khac = Product::where('id_type', '<>', $type)->paginate(3);
     	$loai = Categoty::all();
-    	$loap_sp = Categoty::where('id', $type)->get();
+    	$loap_sp = Categoty::where('id', $type)->first();
     	return view('page.loai_sanpham', compact('sp_theoloai', 'sp_khac', 'loai', 'loap_sp'));
     }
 

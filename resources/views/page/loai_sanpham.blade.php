@@ -29,7 +29,7 @@
 					<div class="beta-products-list">
 						<h4>New Products</h4>
 						<div class="beta-products-details">
-							<p class="pull-left">438 styles found</p>
+							<p class="pull-left">Tìm thấy {{ count($sp_theoloai) }} sản phẩm</p>
 							<div class="clearfix"></div>
 						</div>
 
@@ -55,8 +55,8 @@
 										</p>
 									</div>
 									<div class="single-item-caption">
-										<a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
-										<a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
+										<a class="add-to-cart pull-left" href="{{route('themgiohang',$sp->id)}}"><i class="fa fa-shopping-cart"></i></a>
+										<a class="beta-btn primary" href="{{route('chitietsanpham',$sp->id)}}">Details <i class="fa fa-chevron-right"></i></a>
 										<div class="clearfix"></div>
 									</div>
 								</div>
@@ -70,7 +70,7 @@
 					<div class="beta-products-list">
 						<h4>Sản phẩm khác</h4>
 						<div class="beta-products-details">
-							<p class="pull-left">Tìm thấy {{count($sp_khac)}} sản phẩm</p>
+							<p class="pull-left">Tìm thấy {{ count($sp_khac) }} sản phẩm</p>
 							<div class="clearfix"></div>
 						</div>
 						<div class="row">
@@ -81,7 +81,7 @@
 										<div class="ribbon-wrapper"><div class="ribbon sale">Sale</div></div>
 									@endif
 									<div class="single-item-header">
-										<a href="product.html"><img src="source/image/product/{{$sp_k->image}}" alt="" height="250px"></a>
+										<a href="{{route('chitietsanpham',$sp_k->id)}}"><img src="source/image/product/{{$sp_k->image}}" alt="" height="250px"></a>
 									</div>
 									<div class="single-item-body">
 										<p class="single-item-title">{{$sp_k->name}}</p>
@@ -95,8 +95,8 @@
 										</p>
 									</div>
 									<div class="single-item-caption">
-										<a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
-										<a class="beta-btn primary" href="product.html">Details <i class="fa fa-chevron-right"></i></a>
+										<a class="add-to-cart pull-left" href="{{route('themgiohang',$sp_k->id)}}"><i class="fa fa-shopping-cart"></i></a>
+										<a class="beta-btn primary" href="{{route('chitietsanpham',$sp_k->id)}}">Details <i class="fa fa-chevron-right"></i></a>
 										<div class="clearfix"></div>
 									</div>
 								</div>

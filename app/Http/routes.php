@@ -58,10 +58,10 @@ Route::group(['domain' => env('DOMAIN_FRONTEND' ,'newbie.us')], function (){
         'uses' => 'PageController@getLienHe'
     ]);
 
-    Route::get('dang-nhap', [
-        'as' => 'login',
-        'uses' => 'PageController@getLogin'
-    ]);
+//    Route::get('dang-nhap', [
+//        'as' => 'login',
+//        'uses' => 'PageController@getLogin'
+//    ]);
 
     Route::post('dang-nhap', [
         'as' => 'login',
