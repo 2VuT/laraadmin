@@ -3,7 +3,7 @@
 			<div class="container">
 				<div class="pull-left auto-width-left">
 					<ul class="top-menu menu-beta l-inline">
-						<li><a href=""><i class="fa fa-home"></i> PTIT</a></li>
+						<li><a href=""><i class="fa fa-home"></i> Larashop</a></li>
 						<li><a href=""><i class="fa fa-phone"></i> 069696969</a></li>
 					</ul>
 				</div>
@@ -25,7 +25,7 @@
 		<div class="header-body">
 			<div class="container beta-relative">
 				<div class="pull-left">
-					<a href="index.html" id="logo"><img src="source/image/larashop.jpg" width="200px" alt=""></a>
+					<a href="{{ route('trang-chu') }}" id="logo"><img src="source/image/larashop.jpg" width="200px" alt=""></a>
 				</div>
 				<div class="pull-right beta-components space-left ov">
 					<div class="space10">&nbsp;</div>

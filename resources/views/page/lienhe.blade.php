@@ -27,7 +27,7 @@
 					<div class="space20">&nbsp;</div>
 					<p></p>
 					<div class="space20">&nbsp;</div>
-					<form action="#" method="post" class="contact-form">	
+					<form action="{{ route('lienhe') }}" method="post" class="contact-form">
 						<div class="form-block">
 							<input name="your-name" type="text" placeholder="Your Name">
 						</div>

@@ -9,15 +9,15 @@
 				</div>
 				<div class="col-sm-2">
 					<div class="widget">
-						<h4 class="widget-title">Information</h4>
+						<h4 class="widget-title">Thông tin</h4>
 						<div>
 							<ul>
 								<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Web Design</a></li>
 								<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Web development</a></li>
 								<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Marketing</a></li>
-								<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Tips</a></li>
-								<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Resources</a></li>
-								<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Illustrations</a></li>
+								<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> CEO</a></li>
+								<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Outsource</a></li>
+								<li><a href="blog_fullwidth_2col.html"><i class="fa fa-chevron-right"></i> Fullstack</a></li>
 							</ul>
 						</div>
 					</div>
@@ -25,7 +25,7 @@
 				<div class="col-sm-4">
 				 <div class="col-sm-10">
 					<div class="widget">
-						<h4 class="widget-title">Contact Us</h4>
+						<h4 class="widget-title">Liên hệ</h4>
 						<div>
 							<div class="contact-info">
 								<i class="fa fa-map-marker"></i>
@@ -50,7 +50,7 @@
 	</div> <!-- #footer -->
 	<div class="copyright">
 		<div class="container">
-			<p class="pull-left">Privacy policy. (&copy;) 2014</p>
+			<p class="pull-left">Privacy policy. (&copy;) 2018</p>
 			<p class="pull-right pay-options">
 				<a href="#"><img src="source/assets/dest/images/pay/master.jpg" alt="" /></a>
 				<a href="#"><img src="source/assets/dest/images/pay/pay.jpg" alt="" /></a>
