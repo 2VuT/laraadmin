@@ -163,7 +163,7 @@ class PageController extends Controller
 
         if($user){
             if(Auth::attempt($credentials)){
-                return redirect()->route('trang-chu');
+                return redirect()->route('index');
             //return redirect()->back()->with(['flag'=>'success','message'=>'Đăng nhập thành công']);
             }
             else{
@@ -177,7 +177,7 @@ class PageController extends Controller
 
     public function postLogout(){
     	Auth::logout();
-    	return redirect()->route('trang-chu');
+    	return redirect()->route('index');
     }
 
 }
