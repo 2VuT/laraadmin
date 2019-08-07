@@ -112,6 +112,7 @@
 						@la_display($module, 'total')
 						@la_display($module, 'payment')
 						@la_display($module, 'note')
+						@la_display($module, 'proccess')
 					</div>
 				</div>
 			</div>

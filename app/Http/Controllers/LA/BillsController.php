@@ -23,7 +23,7 @@ class BillsController extends Controller
 {
 	public $show_action = true;
 	public $view_col = 'id_customer';
-	public $listing_cols = ['id', 'id_customer', 'date_order', 'total', 'payment', 'note'];
+	public $listing_cols = ['id', 'id_customer', 'date_order', 'total', 'payment', 'note', 'proccess'];
 	
 	public function __construct() {
 		// Field Access of Listing Columns

@@ -38,6 +38,7 @@
 					@la_input($module, 'total')
 					@la_input($module, 'payment')
 					@la_input($module, 'note')
+					@la_input($module, 'proccess')
 					--}}
                     <br>
 					<div class="form-group">

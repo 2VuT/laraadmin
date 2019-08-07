@@ -23,6 +23,7 @@ class CreateBillsTable extends Migration
             ["total", "Total", "Currency", false, "", 0, 11, false],
             ["payment", "Payment", "Dropdown", false, "", 0, 0, false, ["Card","Divery","Visa"]],
             ["note", "Note", "Textarea", false, "", 0, 0, false],
+            ["proccess", "Proccess", "Dropdown", false, "No", 0, 0, false, ["Yes","No"]],
         ]);
 		
 		/*

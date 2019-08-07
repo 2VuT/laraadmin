@@ -22,13 +22,4 @@ class Bill extends Model
 	protected $guarded = [];
 
 	protected $dates = ['deleted_at'];
-
-	public function bill_detail(){
-    	return $this->hasMany('App\Models\BillDetail','id_bill','id');
-    }
-
-    public function bill(){
-    	return $this->belongsTo('App\Models\Customer','id_customer','id');
-    }
-
 }
