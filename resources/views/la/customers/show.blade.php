@@ -107,12 +107,12 @@
 						<h4>General Info</h4>
 					</div>
 					<div class="panel-body">
+						@la_display($module, 'password')
 						@la_display($module, 'name')
 						@la_display($module, 'gender')
 						@la_display($module, 'email')
 						@la_display($module, 'address')
 						@la_display($module, 'phone_number')
-						@la_display($module, 'note')
 					</div>
 				</div>
 			</div>

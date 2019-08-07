@@ -133,14 +133,15 @@ class PageController extends Controller
             //'re_password.same' => 'mat khau nhap lai khong dung'
         ]);
 
-        $user = new User();
-        $user->name = $req->fullname;
-        $user->email = $req->email;
-        $user->password = Hash::make($req->password);
-        $user->address = $req->address;
-        $user->phone = $req->phone;
-        $user->save();
-        return redirect()->back()->with(['thanh cong', 'dang ky thanh cong']);
+        $cus = new Customer();
+        $cus->name = $req->fullname;
+        $cus->email = $req->email;
+        $cus->password = Hash::make($req->password);
+        $cus->address = $req->address;
+        $cus->phone_number = $req->phone;
+        $cus->save();
+
+        return redirect()->route('index')->with(['thanh cong', 'dang ky thanh cong']);
 
     }
 

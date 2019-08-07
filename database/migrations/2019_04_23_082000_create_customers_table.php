@@ -18,12 +18,12 @@ class CreateCustomersTable extends Migration
     public function up()
     {
         Module::generate("Customers", 'customers', 'name', 'fa-cube', [
+            ["password", "Password", "Password", false, "", 8, 512, false],
             ["name", "Name", "Name", false, "", 0, 256, false],
             ["gender", "Gender", "String", false, "", 0, 256, false],
-            ["email", "Email", "Email", false, "", 0, 256, false],
+            ["email", "Email", "Email", true, "", 0, 256, false],
             ["address", "Address", "Address", false, "", 0, 256, false],
-            ["phone_number", "Phone Number", "Mobile", false, "", 0, 20, false],
-            ["note", "Note", "Textarea", false, "", 0, 0, false],
+            ["phone_number", "Phone Number", "Mobile", true, "", 8, 11, true],
         ]);
 		
 		/*

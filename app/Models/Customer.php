@@ -22,8 +22,4 @@ class Customer extends Model
 	protected $guarded = [];
 
 	protected $dates = ['deleted_at'];
-
-	public function bill(){
-    	return $this->hasMany('App\Models\Bill','id_customer','id');
-    }
 }

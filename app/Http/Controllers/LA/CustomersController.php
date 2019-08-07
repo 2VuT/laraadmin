@@ -23,7 +23,7 @@ class CustomersController extends Controller
 {
 	public $show_action = true;
 	public $view_col = 'name';
-	public $listing_cols = ['id', 'name', 'gender', 'email', 'address', 'phone_number', 'note'];
+	public $listing_cols = ['id', 'password', 'name', 'gender', 'email', 'address', 'phone_number'];
 	
 	public function __construct() {
 		// Field Access of Listing Columns

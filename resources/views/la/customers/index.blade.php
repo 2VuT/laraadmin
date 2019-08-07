@@ -59,12 +59,12 @@
                     @la_form($module)
 					
 					{{--
+					@la_input($module, 'password')
 					@la_input($module, 'name')
 					@la_input($module, 'gender')
 					@la_input($module, 'email')
 					@la_input($module, 'address')
 					@la_input($module, 'phone_number')
-					@la_input($module, 'note')
 					--}}
 				</div>
 			</div>
