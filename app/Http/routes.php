@@ -25,9 +25,9 @@ Route::group(['domain' => env('DOMAIN_FRONTEND' ,'newbie.us')], function (){
 
     Route::get('/intro', 'PageController@getGioiThieu')->name('intro');
 
-    Route::get('/book-cart' , 'PageController@getCheckout')->name('book_product');
+    Route::get('/book-cart' , 'PageController@getCheckout')->name('book_cart');
 
-    Route::post('/book-cart', 'PageController@postCheckout')->name('book_product');
+    Route::post('/book-cart', 'PageController@postCheckout')->name('book_cart');
 
     Route::get('/contact', 'PageController@getLienHe')->name('contact');
 
@@ -41,13 +41,13 @@ Route::group(['domain' => env('DOMAIN_FRONTEND' ,'newbie.us')], function (){
 
     Route::get('/logout', 'PageController@postLogout')->name('logout');
 
-    Route::get('/redirect', 'SocialAuthController@redirect');
+    Route::get('/redirect', 'SocialAuthController@redirect')->name('loginfb');
 
-    Route::get('/callback', 'SocialAuthController@callback');
+    Route::get('/callback', 'SocialAuthController@callback')->name('infor_fbuser');
 
-    Route::get('/paypal', 'PaypalController@index');
+    Route::get('/paypal', 'PaypalController@index')->name('get_paypal)');
 
-    Route::get('/status', 'PaypalController@status');
+    Route::get('/status', 'PaypalController@status')->name('return_status');
 });
 
 /* ================== Homepage + Admin Routes ================== */
