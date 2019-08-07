@@ -7,7 +7,7 @@
 			</div>
 			<div class="pull-right">
 				<div class="beta-breadcrumb font-large">
-					<a href="{{route('trang-chu')}}">Home</a> / <span>Loại sản phẩm</span>
+					<a href="{{route('index')}}">Home</a> / <span>Loại sản phẩm</span>
 				</div>
 			</div>
 			<div class="clearfix"></div>
@@ -21,7 +21,7 @@
 				<div class="col-sm-3">
 					<ul class="aside-menu">
 					@foreach($loai as $l)
-						<li><a href="{{route('loaisanpham',$l->id)}}">{{$l->name}}</a></li>
+						<li><a href="{{route('product_types',$l->id)}}">{{$l->name}}</a></li>
 					@endforeach
 					</ul>
 				</div>
@@ -41,7 +41,7 @@
 										<div class="ribbon-wrapper"><div class="ribbon sale">Sale</div></div>
 									@endif
 									<div class="single-item-header">
-										<a href="{{route('chitietsanpham',$sp->id)}}"><img src="source/image/product/{{$sp->image}}" alt="" height="250px"></a>
+										<a href="{{route('product_details',$sp->id)}}"><img src="source/image/product/{{$sp->image}}" alt="" height="250px"></a>
 									</div>
 									<div class="single-item-body">
 										<p class="single-item-title">{{$sp->name}}</p>
@@ -55,8 +55,8 @@
 										</p>
 									</div>
 									<div class="single-item-caption">
-										<a class="add-to-cart pull-left" href="{{route('themgiohang',$sp->id)}}"><i class="fa fa-shopping-cart"></i></a>
-										<a class="beta-btn primary" href="{{route('chitietsanpham',$sp->id)}}">Details <i class="fa fa-chevron-right"></i></a>
+										<a class="add-to-cart pull-left" href="{{route('add_to_cart',$sp->id)}}"><i class="fa fa-shopping-cart"></i></a>
+										<a class="beta-btn primary" href="{{route('products_details',$sp->id)}}">Details <i class="fa fa-chevron-right"></i></a>
 										<div class="clearfix"></div>
 									</div>
 								</div>
@@ -81,7 +81,7 @@
 										<div class="ribbon-wrapper"><div class="ribbon sale">Sale</div></div>
 									@endif
 									<div class="single-item-header">
-										<a href="{{route('chitietsanpham',$sp_k->id)}}"><img src="source/image/product/{{$sp_k->image}}" alt="" height="250px"></a>
+										<a href="{{route('product_details',$sp_k->id)}}"><img src="source/image/product/{{$sp_k->image}}" alt="" height="250px"></a>
 									</div>
 									<div class="single-item-body">
 										<p class="single-item-title">{{$sp_k->name}}</p>
@@ -95,8 +95,8 @@
 										</p>
 									</div>
 									<div class="single-item-caption">
-										<a class="add-to-cart pull-left" href="{{route('themgiohang',$sp_k->id)}}"><i class="fa fa-shopping-cart"></i></a>
-										<a class="beta-btn primary" href="{{route('chitietsanpham',$sp_k->id)}}">Details <i class="fa fa-chevron-right"></i></a>
+										<a class="add-to-cart pull-left" href="{{route('add_to_cart',$sp_k->id)}}"><i class="fa fa-shopping-cart"></i></a>
+										<a class="beta-btn primary" href="{{route('product_details',$sp_k->id)}}">Details <i class="fa fa-chevron-right"></i></a>
 										<div class="clearfix"></div>
 									</div>
 								</div>

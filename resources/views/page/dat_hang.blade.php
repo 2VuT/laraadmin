@@ -7,7 +7,7 @@
 			</div>
 			<div class="pull-right">
 				<div class="beta-breadcrumb">
-					<a href="{{ route('trang-chu') }}">Trang chủ</a>/<span>Đặt hàng</span>
+					<a href="{{ route('index') }}">Trang chủ</a>/<span>Đặt hàng</span>
 				</div>
 			</div>
 			<div class="clearfix"></div>
@@ -17,7 +17,7 @@
 <div class="container">
 	<div id="content">
 		
-		<form action="{{route('dathang')}}" method="post" class="beta-form-checkout">
+		<form action="{{route('book_cart')}}" method="post" class="beta-form-checkout">
 			<input type="hidden" name="_token" value="{{csrf_token()}}">
 			<div class="row">@if(Session::has('thongbao')){{Session::get('thongbao')}}@endif</div>
 			<div class="row">

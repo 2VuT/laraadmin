@@ -7,7 +7,7 @@
 			</div>
 			<div class="pull-right">
 				<div class="beta-breadcrumb font-large">
-					<a href="{{ route('trang-chu') }}">Trang chủ</a> / <span>Liên hệ</span>
+					<a href="{{ route('index') }}">Trang chủ</a> / <span>Liên hệ</span>
 				</div>
 			</div>
 			<div class="clearfix"></div>
@@ -27,7 +27,7 @@
 					<div class="space20">&nbsp;</div>
 					<p></p>
 					<div class="space20">&nbsp;</div>
-					<form action="{{ route('lienhe') }}" method="post" class="contact-form">
+					<form action="{{ route('contact') }}" method="post" class="contact-form">
 						<div class="form-block">
 							<input name="your-name" type="text" placeholder="Your Name">
 						</div>

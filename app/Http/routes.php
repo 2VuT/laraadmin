@@ -13,163 +13,42 @@
 
 
 Route::group(['domain' => env('DOMAIN_FRONTEND' ,'newbie.us')], function (){
-    Route::get('/', [
-        'as' => 'trang-chu',
-        'uses' => 'PageController@getIndex'
-    ]);
+    Route::get('/index', 'PageController@getIndex')->name('index');
 
-    Route::get('loai-san-pham/{type}', [
-        'as' => 'loaisanpham',
-        'uses' => 'PageController@getLoaiSp'
-    ]);
+    Route::get('/product-types/{type}', 'PageController@getLoaiSp')->name('product_type');
 
-    Route::get('chi-tiet-san-pham/{id}' ,[
-        'as' => 'chitietsanpham',
-        'uses' => 'PageController@getChitiet'
-    ]);
+    Route::get('/product-details/{id}', 'PageController@getChitiet')->name('product_details');
 
-    Route::get('them-gio-hang/{id}', [
-        'as' =>'themgiohang',
-        'uses' => 'PageController@getAddtoCart'
-    ]);
+    Route::get('/add-to-cart/{id}', 'PageController@getAddtoCart')->name('add_to_cart');
 
-    Route::get('del-cart/{id}', [
-        'as' => 'xoagiohang',
-        'uses' => 'PageController@getDelItemCart'
-    ]);
+    Route::get('/delete-cart/{id}', 'PageController@getDelItemCart')->name('delete_cart');
 
-    Route::get('gioi-thieu', [
-        'as' => 'gioithieu',
-        'uses' => 'PageController@getGioiThieu'
-    ]);
+    Route::get('/intro', 'PageController@getGioiThieu')->name('intro');
 
-    Route::get('dat-hang' ,[
-        'as' =>'dathang',
-        'uses' => 'PageController@getCheckout'
-    ]);
+    Route::get('/book-cart' , 'PageController@getCheckout')->name('book_product');
 
-    Route::post('dat-hang', [
-        'as' => 'dathang',
-        'uses' => 'PageController@postCheckout'
-    ]);
+    Route::post('/book-cart', 'PageController@postCheckout')->name('book_product');
 
-    Route::get('lien-he', [
-        'as' => 'lienhe',
-        'uses' => 'PageController@getLienHe'
-    ]);
+    Route::get('/contact', 'PageController@getLienHe')->name('contact');
 
-//    Route::get('dang-nhap', [
-//        'as' => 'login',
-//        'uses' => 'PageController@getLogin'
-//    ]);
+    Route::get('/login', 'PageController@getLogin')->name('login');
 
-    Route::post('dang-nhap', [
-        'as' => 'login',
-        'uses' => 'PageController@postLogin'
-    ]);
+    Route::post('/login' , 'PageController@postLogin')->name('login');
 
-    Route::get('dang-ky', [
-        'as' =>'signin',
-        'uses' => 'PageController@getSignin'
-    ]);
+    Route::get('/signin', 'PageController@getSignin')->name('signin');
 
-    Route::post('dang-ky', [
-        'as' => 'signin',
-        'uses' => 'PageController@postSignin'
-    ]);
+    Route::post('/signin', 'PageController@postSignin')->name('signin');
 
-    Route::get('dang-xuat', [
-        'as' => 'logout',
-        'uses' => 'PageController@postLogout'
-    ]);
-
-    Route::get('pass', function (){
-        echo bcrypt("1234567890");
-    });
+    Route::get('/logout', 'PageController@postLogout')->name('logout');
 
     Route::get('/redirect', 'SocialAuthController@redirect');
 
     Route::get('/callback', 'SocialAuthController@callback');
 
-    Route::get('paypal', 'PaypalController@index');
+    Route::get('/paypal', 'PaypalController@index');
 
-    Route::get('status', 'PaypalController@status');
+    Route::get('/status', 'PaypalController@status');
 });
-
-
-Route::get('index', [
-	'as' => 'trang-chu',
-	'uses' => 'PageController@getIndex'
-]);
-
-Route::get('loai-san-pham/{type}', [
-	'as' => 'loaisanpham',
-	'uses' => 'PageController@getLoaiSp'
-]);
-
-Route::get('chi-tiet-san-pham/{id}' ,[
-	'as' => 'chitietsanpham',
-	'uses' => 'PageController@getChitiet'
-]);
-
-Route::get('them-gio-hang/{id}', [
-	'as' =>'themgiohang',
-	'uses' => 'PageController@getAddtoCart'
-]);
-
-Route::get('del-cart/{id}', [
-	'as' => 'xoagiohang',
-	'uses' => 'PageController@getDelItemCart'
-]);
-
-Route::get('gioi-thieu', [
-	'as' => 'gioithieu',
-	'uses' => 'PageController@getGioiThieu'
-]);
-
-Route::get('dat-hang' ,[
-	'as' =>'dathang',
-	'uses' => 'PageController@getCheckout'
-]);
-
-Route::post('dat-hang', [
-	'as' => 'dathang',
-	'uses' => 'PageController@postCheckout'
-]);
-
-Route::get('lien-he', [
-	'as' => 'lienhe',
-	'uses' => 'PageController@getLienHe'
-]);
-
-Route::get('dang-nhap', [
-	'as' => 'login',
-	'uses' => 'PageController@getLogin'
-]);
-
-Route::post('dang-nhap', [
-	'as' => 'login',
-	'uses' => 'PageController@postLogin'
-]);
-
-Route::get('dang-ky', [
-	'as' =>'signin',
-	'uses' => 'PageController@getSignin'
-]);
-
-Route::post('dang-ky', [
-	'as' => 'signin',
-	'uses' => 'PageController@postSignin'
-]);
-
-Route::get('dang-xuat', [
-	'as' => 'logout',
-	'uses' => 'PageController@postLogout'
-]);
-
-Route::get('/redirect', 'SocialAuthController@redirect');
-
-Route::get('/callback', 'SocialAuthController@callback');
 
 /* ================== Homepage + Admin Routes ================== */
 

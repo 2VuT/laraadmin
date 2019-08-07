@@ -45,7 +45,7 @@
 										<div class="ribbon-wrapper"><div class="ribbon sale">Sale</div></div>
 									@endif
 										<div class="single-item-header">
-											<a href="{{route('chitietsanpham',$new->id)}}"><img src="source/image/product/{{$new->image}}" alt="" height="250px"></a>
+											<a href="{{route('product_details',$new->id)}}"><img src="source/image/product/{{$new->image}}" alt="" height="250px"></a>
 										</div>
 										<div class="single-item-body">
 											<p class="single-item-title">{{$new->name}}</p>
@@ -59,8 +59,8 @@
 											</p>
 										</div>
 										<div class="single-item-caption">
-											<a class="add-to-cart pull-left" href="{{route('themgiohang',$new->id)}}"><i class="fa fa-shopping-cart"></i></a>
-											<a class="beta-btn primary" href="{{route('chitietsanpham',$new->id)}}">Chi tiết <i class="fa fa-chevron-right"></i></a>
+											<a class="add-to-cart pull-left" href="{{route('add_to_cart',$new->id)}}"><i class="fa fa-shopping-cart"></i></a>
+											<a class="beta-btn primary" href="{{route('product_details',$new->id)}}">Chi tiết <i class="fa fa-chevron-right"></i></a>
 											<div class="clearfix"></div>
 										</div>
 									</div>
@@ -83,7 +83,7 @@
 								<div class="col-sm-3">
 									<div class="single-item">
 										<div class="single-item-header">
-											<a href="{{route('chitietsanpham',$spkm->id)}}"><img src="source/image/product/{{$spkm->image}}" alt="" height="250px"></a>
+											<a href="{{route('product_details',$spkm->id)}}"><img src="source/image/product/{{$spkm->image}}" alt="" height="250px"></a>
 										</div>
 										<div class="single-item-body">
 											<p class="single-item-title">{{$spkm->name}}</p>
@@ -93,8 +93,8 @@
 											</p>
 										</div>
 										<div class="single-item-caption">
-											<a class="add-to-cart pull-left" href="{{route('themgiohang',$spkm->id)}}"><i class="fa fa-shopping-cart"></i></a>
-											<a class="beta-btn primary" href="{{route('chitietsanpham',$new->id)}}">Details <i class="fa fa-chevron-right"></i></a>
+											<a class="add-to-cart pull-left" href="{{route('add_to_cart',$spkm->id)}}"><i class="fa fa-shopping-cart"></i></a>
+											<a class="beta-btn primary" href="{{route('product_details',$new->id)}}">Details <i class="fa fa-chevron-right"></i></a>
 											<div class="clearfix"></div>
 										</div>
 									</div>

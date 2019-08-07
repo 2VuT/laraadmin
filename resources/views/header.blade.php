@@ -25,7 +25,7 @@
 		<div class="header-body">
 			<div class="container beta-relative">
 				<div class="pull-left">
-					<a href="{{ route('trang-chu') }}" id="logo"><img src="source/image/larashop.jpg" width="200px" alt=""></a>
+					<a href="{{ route('index') }}" id="logo"><img src="source/image/larashop.jpg" width="200px" alt=""></a>
 				</div>
 				<div class="pull-right beta-components space-left ov">
 					<div class="space10">&nbsp;</div>
@@ -45,7 +45,7 @@
 							@if(Session::has('cart'))
 							@foreach($product_cart as $product)
 								<div class="cart-item">
-									<a class="cart-item-delete" href="{{route('xoagiohang',$product['item']['id'])}}"><i class="fa fa-times"></i></a>
+									<a class="cart-item-delete" href="{{route('delete_cart',$product['item']['id'])}}"><i class="fa fa-times"></i></a>
 									<div class="media">
 										<a class="pull-left" href="#"><img src="source/image/product/{{$product['item']['image']}}" alt=""></a>
 										<div class="media-body">
@@ -61,7 +61,7 @@
 
 									<div class="center">
 										<div class="space10">&nbsp;</div>
-										<a href="{{route('dathang')}}" class="beta-btn primary text-center">Đặt hàng <i class="fa fa-chevron-right"></i></a>
+										<a href="{{route('book_cart')}}" class="beta-btn primary text-center">Đặt hàng <i class="fa fa-chevron-right"></i></a>
 									</div>
 								</div>
 
@@ -79,16 +79,16 @@
 				<div class="visible-xs clearfix"></div>
 				<nav class="main-menu">
 					<ul class="l-inline ov">
-						<li><a href="{{route('trang-chu')}}">Trang chủ</a></li>
-						<li><a href="#">Loại sản phẩm</a>
+						<li><a href="{{route('index')}}">Trang chủ</a></li>
+						<li><a href="{{ route('index') }}">Loại sản phẩm</a>
 							<ul class="sub-menu">
 								@foreach($loai_sp as $loai)
-								<li><a href="{{route('loaisanpham',$loai->id)}}">{{$loai->name}}</a></li>
+								<li><a href="{{route('product_type',$loai->id)}}">{{$loai->name}}</a></li>
 								@endforeach
 							</ul>
 						</li>
-						<li><a href="{{route('gioithieu')}}">Giới thiệu</a></li>
-						<li><a href="{{route('lienhe')}}">Liên hệ</a></li>
+						<li><a href="{{route('intro')}}">Giới thiệu</a></li>
+						<li><a href="{{route('contact')}}">Liên hệ</a></li>
 					</ul>
 					<div class="clearfix"></div>
 				</nav>
