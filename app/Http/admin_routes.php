@@ -107,4 +107,8 @@ Route::group(['as' => $as, 'middleware' => ['auth', 'permission:ADMIN_PANEL']], 
 	/* ================== SocialAccounts ================== */
 	Route::resource(config('laraadmin.adminRoute') . '/socialaccounts', 'LA\SocialAccountsController');
 	Route::get(config('laraadmin.adminRoute') . '/socialaccount_dt_ajax', 'LA\SocialAccountsController@dtajax');
+
+	/* ================== Sales ================== */
+	Route::resource(config('laraadmin.adminRoute') . '/sales', 'LA\SalesController');
+	Route::get(config('laraadmin.adminRoute') . '/sale_dt_ajax', 'LA\SalesController@dtajax');
 });
