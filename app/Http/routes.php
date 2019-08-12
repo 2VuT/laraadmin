@@ -12,10 +12,10 @@
 */
 
 
-Route::group(['domain' => env('DOMAIN_FRONTEND' ,'newbie.us')], function (){
+Route::group(['domain' => env('DOMAIN_FRONTEND')], function (){
     Route::get('/index', 'PageController@getIndex')->name('index');
 
-    Route::get('/product-types/{type}', 'PageController@getLoaiSp')->name('product_type');
+    Route::get('/product-types/{type}', 'PageController@getLoaiSp')->name('product_types');
 
     Route::get('/product-details/{id}', 'PageController@getChitiet')->name('product_details');
 
@@ -48,7 +48,33 @@ Route::group(['domain' => env('DOMAIN_FRONTEND' ,'newbie.us')], function (){
     Route::get('/paypal', 'PaypalController@index')->name('get_paypal)');
 
     Route::get('/status', 'PaypalController@status')->name('return_status');
+
+    Route::post('/contact', 'PageController@sendMail')->name('contact');
+
+    Route::post('/', 'PageController@newLetters')->name('newlts');
+
+    Route::group(['prefix' => 'demo', 'namespace' => 'demo'], function (){
+       Route::get('/demo1', 'DemoController@demo');
+       Route::get('/demo2', 'DemoController@test');
+    });
 });
+
+Route::resource('products', 'API\APIProductsController', ['only' => ['index', 'show', 'store', 'update', 'destroy']]);
+
+Route::get('test/{type}', function ($type){
+    $prd = App\Models\Product::where('id_type', '=', $type)->select('name')->first();
+
+    echo $prd;
+});
+
+Route::get('products/{id}', function ($id){
+   $prd = App\Models\Product::where('id_type', '=', $id)->pluck('name')->get();
+   echo $prd;
+});
+
+Route::get('mail', 'PageController@mail');
+
+Route::post('mail', 'PageController@sendMail')->name('send_mail');
 
 /* ================== Homepage + Admin Routes ================== */
 

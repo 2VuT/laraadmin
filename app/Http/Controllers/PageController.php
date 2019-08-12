@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
 use Auth;
 use App\User;
 use App\Cart;
@@ -18,6 +17,7 @@ use App\Models\Slide;
 use Session;
 use Validator;
 use Hash;
+use Mail;
 
 class PageController extends Controller
 {
@@ -141,8 +141,7 @@ class PageController extends Controller
         $cus->phone_number = $req->phone;
         $cus->save();
 
-        return redirect()->route('index')->with(['thanh cong', 'dang ky thanh cong']);
-
+        return redirect()->route('login');
     }
 
     public function postLogin(Request $req){
@@ -179,6 +178,25 @@ class PageController extends Controller
     public function postLogout(){
     	Auth::logout();
     	return redirect()->route('index');
+    }
+
+    public function sendMail(Request $request){
+        $data = $request->all();
+//        Mail::send(route('index'), array('name' => $data['name'], 'email' => $data['email'], 'data' => $data['message']), function ($message){
+//           $message->to('buoikhoasd@gmail.com', 'Visitor')->subject('Visitor feedback');
+//        });
+
+        Mail::send('page.gioithieu', array('name' => $data['name'], 'email' => $data['email'], 'data' => $data['message']), function ($message){
+           $message->to('buoikhoasd@gmail.com', 'Customer')->subject('Customer\'s feedback');
+        });
+
+        Session::flash('flash_message', 'Send message successfully');
+
+        return redirect()->route('index');
+    }
+
+    public function newLetters(Request $request){
+
     }
 
 }
