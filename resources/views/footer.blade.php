@@ -39,8 +39,8 @@
 				<div class="col-sm-3">
 					<div class="widget">
 						<h4 class="widget-title">Newsletter Subscribe</h4>
-						<form action="#" method="post">
-							<input type="email" name="your_email">
+						<form action="{{ route('newlts') }}" method="post">
+							<input type="email" name="email" placeholder="Your email">
 							<button class="pull-right" type="submit">Subscribe <i class="fa fa-chevron-right"></i></button>
 						</form>
 					</div>

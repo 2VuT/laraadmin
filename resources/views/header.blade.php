@@ -83,7 +83,7 @@
 						<li><a href="{{ route('index') }}">Loại sản phẩm</a>
 							<ul class="sub-menu">
 								@foreach($loai_sp as $loai)
-								<li><a href="{{route('product_type',$loai->id)}}">{{$loai->name}}</a></li>
+								<li><a href="{{route('product_types',$loai->id)}}">{{$loai->name}}</a></li>
 								@endforeach
 							</ul>
 						</li>

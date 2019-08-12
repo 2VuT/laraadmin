@@ -28,17 +28,18 @@
 					<p></p>
 					<div class="space20">&nbsp;</div>
 					<form action="{{ route('contact') }}" method="post" class="contact-form">
+						{{ csrf_field() }}
 						<div class="form-block">
-							<input name="your-name" type="text" placeholder="Your Name">
+							<input name="name" type="text" placeholder="Your Name">
 						</div>
 						<div class="form-block">
-							<input name="your-email" type="email" placeholder="Your Email">
+							<input name="email" type="email" placeholder="Your Email">
 						</div>
 						<div class="form-block">
-							<input name="your-subject" type="text" placeholder="Subject">
+							<input name="subject" type="text" placeholder="Subject">
 						</div>
 						<div class="form-block">
-							<textarea name="your-message" placeholder="Message"></textarea>
+							<textarea name="message" placeholder="Message"></textarea>
 						</div>
 						<div class="form-block">
 							<button type="submit" class="beta-btn primary">Phản hồi <i class="fa fa-chevron-right"></i></button>
