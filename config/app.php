@@ -157,6 +157,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         Dwij\Laraadmin\LAProvider::class,
         Laravel\Socialite\SocialiteServiceProvider::class,
+        Illuminate\Notifications\NotificationServiceProvider::class,
 
     ],
 

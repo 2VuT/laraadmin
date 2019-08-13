@@ -186,11 +186,16 @@ class PageController extends Controller
 //           $message->to('buoikhoasd@gmail.com', 'Visitor')->subject('Visitor feedback');
 //        });
 
-        Mail::send('page.gioithieu', array('name' => $data['name'], 'email' => $data['email'], 'data' => $data['message']), function ($message){
-           $message->to('buoikhoasd@gmail.com', 'Customer')->subject('Customer\'s feedback');
-        });
+//        Mail::send('page.gioithieu', array('name' => $data['name'], 'email' => $data['email'], 'data' => $data['message']), function ($message){
+//           $message->to('buoikhoasd@gmail.com', 'Customer')->subject('Customer\'s feedback');
+//        });
+//
+//
+//        Session::flash('flash_message', 'Send message successfully');
 
-        Session::flash('flash_message', 'Send message successfully');
+        Mail::send('page.lienhe', array('name' => $data['name'], 'email' => $data['email'], 'data' => $data['message']), function ($message){
+            $message->to('buoikhoasd@gmail.com', 'Customer')->subject('testing system!');
+        });
 
         return redirect()->route('index');
     }
