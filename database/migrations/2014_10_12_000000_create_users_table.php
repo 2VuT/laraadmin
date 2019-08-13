@@ -18,6 +18,7 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Module::generate("Users", 'users', 'name', 'fa-group', [
+            ["is_sub", "Is Sub", "Dropdown", false, "No", 0, 0, true, ["Yes","No"]],
             ["name", "Name", "Name", false, "", 5, 250, true],
             ["context_id", "Context", "Integer", false, "0", 0, 0, false],
             ["email", "Email", "Email", true, "", 0, 250, true],

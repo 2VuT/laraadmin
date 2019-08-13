@@ -107,6 +107,7 @@
 						<h4>General Info</h4>
 					</div>
 					<div class="panel-body">
+						@la_display($module, 'is_sub')
 						@la_display($module, 'name')
 						@la_display($module, 'context_id')
 						@la_display($module, 'email')

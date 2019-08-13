@@ -59,6 +59,7 @@
                     @la_form($module)
 					
 					{{--
+					@la_input($module, 'is_sub')
 					@la_input($module, 'name')
 					@la_input($module, 'context_id')
 					@la_input($module, 'email')
